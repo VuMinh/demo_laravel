@@ -209,3 +209,19 @@
 
 ### Removed
 - Remove index from password reset `token` column ([#4180](https://github.com/laravel/laravel/pull/4180))
+
+### Config local for web
+- add code in apache httpd-vhosts.conf below:
+```nashorn js
+<VirtualHost *:80> 
+    ServerAdmin laravel.demo
+    ServerName laravel.demo 
+    ServerAlias laravel.demo 
+    DocumentRoot "D:/demo_laravel" 
+    <Directory "D:/demo_laravel"> 
+        Options Indexes FollowSymLinks MultiViews 
+        AllowOverride All 
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
