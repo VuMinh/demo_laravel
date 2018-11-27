@@ -67,3 +67,19 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+### Config local for web
+- add code in apache httpd-vhosts.conf below:
+```nashorn js
+<VirtualHost *:80> 
+    ServerAdmin laravel.demo
+    ServerName laravel.demo 
+    ServerAlias laravel.demo 
+    DocumentRoot "D:/demo_laravel" 
+    <Directory "D:/demo_laravel"> 
+        Options Indexes FollowSymLinks MultiViews 
+        AllowOverride All 
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
