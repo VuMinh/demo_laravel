@@ -83,3 +83,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     </Directory>
 </VirtualHost>
 ```
+### Notes:
+- Những tham số bắt buộc trong route => được định nghĩa trong dấu `{}`

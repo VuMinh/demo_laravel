@@ -14,6 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/demo', function (){
-   return view('demo');
+Route::get('/demo/{product}/{name?}', function ($product, $name = null){
+
+    $string_hello = '';
+    if($name == null){
+        $string_hello =  'Hello'." ".$product;
+    }else{
+        $string_hello =  'Hello world, '.$product . ' '.$name;
+    }
+   return view('demo')->with('str_hello', $string_hello);
 });
+Route::get('demo', 'DemoController@demo');
